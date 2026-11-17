@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python virtual environment
+backend/venv/
+venv/
+
+# Environment variables / API keys
+.env
+backend/.env
+frontend/.env
+*.env
+
+# Node
+frontend/node_modules/
+node_modules/
+
+# Vite build
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
