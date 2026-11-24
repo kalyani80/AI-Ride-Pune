@@ -46,6 +46,8 @@ def seed():
         for account in ACCOUNTS:
             existing = db.query(User).filter(User.email == account["email"]).first()
             if existing:
+                existing.role = account["role"]
+                existing.password_hash = hash_password(DEMO_PASSWORD)
                 continue
             user = User(
                 name=account["name"],
