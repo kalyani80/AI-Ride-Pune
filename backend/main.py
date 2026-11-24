@@ -73,7 +73,12 @@ if GEMINI_API_KEY:
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=CORS_ORIGINS or ["*"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://xc4fnrsm-5173.inc1.devtunnels.ms",
+    ],
+    allow_origin_regex=r"https://.*\.devtunnels\.ms",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
