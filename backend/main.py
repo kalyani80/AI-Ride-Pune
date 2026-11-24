@@ -74,11 +74,11 @@ if GEMINI_API_KEY:
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 VEHICLES = {
     "mini": {"id": "mini", "name": "Mini", "base": 40, "per_km": 12, "seats": 4, "eta_extra": 0},
     "sedan": {"id": "sedan", "name": "Sedan", "base": 60, "per_km": 18, "seats": 4, "eta_extra": 2},
