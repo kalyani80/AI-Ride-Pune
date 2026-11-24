@@ -40,11 +40,15 @@ from schemas import (
 
 load_dotenv()
 
+from seed import seed
+
+
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     Base.metadata.create_all(bind=engine)
     try:
         ensure_columns()
+        seed()
     except Exception:
         pass
     yield
